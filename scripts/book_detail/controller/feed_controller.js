@@ -1,0 +1,4 @@
+bookDetail.controller('FeedController', function() {
+  	
+	
+});

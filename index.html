@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="app">
+<html ng-app="myBook">
 <head>
   <title>My Book</title>
 
@@ -8,27 +8,30 @@
   <script src="./lib/angular-route.js"></script>
   <link rel="stylesheet" type="text/css" href="./lib/bootstrap.min.css" />
 
-  <script src="./js/app.js"></script>
-  <script src="./js/directives.js"></script>
-  <script src="./js/route.js"></script>
-  <link rel="stylesheet" type="text/css" href="./style/css/login.css" />
-  <link rel="stylesheet" type="text/css" href="./style/css/myBook.css" />
-  <link rel="stylesheet" type="text/css" href="./style/css/profile.css" />
-  <link rel="stylesheet" type="text/css" href="./style/css/feed.css" />  
+  <script src="app.js"></script>
+  <script src="./scripts/login/controller/login_controller.js"></script>
+  <script src="./scripts/book_detail/controller/book_detail_controller.js"></script>
+  <script src="./scripts/book_detail/controller/feed_controller.js"></script>
+  <script src="./scripts/book_detail/controller/profile_controller.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="./styles/css/login.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/css/book_detail.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/css/profile.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/css/feed.css" />  
 </head>
 <body ng-controller="BookController">
 
-<header>
+<header ng-controller="LoginController">
 	<div class="headerTitle">My Book</div>
 	<section class="loginSection">
 		<form name="myForm"  ng-hide="loggedIn">
-			 <input type="text" id="userName" placeholder="User Name" ng-model="userName" required/>
-			 <input type="password" id="password" placeholder="Password" ng-model="password" required/>
+			 <input type="text" id="userName" placeholder="User Name" ng-model="user.userName" required/>
+			 <input type="password" id="password" placeholder="Password" ng-model="user.password" required/>
 			 <input value="Sign In" type="submit" ng-model="loggedIn" ng-click="login()")/>
 		</form>
 	</section>
 	<section class="logoutSection" ng-show="loggedIn">
-		<span>Welcome {{userName}}</span>
+		<span>Welcome {{user.userName}}</span>
 		<input class="logoutButton" type="submit" value="Sign Out" ng-click="logout()"></input>
 	</section>
 </header>

@@ -1,0 +1,4 @@
+bookDetail.controller('ProfileController', function() {
+  	
+	
+});
