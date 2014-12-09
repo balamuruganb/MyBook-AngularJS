@@ -1,0 +1,12 @@
+<div class="headerTitle">My Book</div>
+<section class="loginSection">
+	<form name="myForm"  ng-hide="loggedIn">
+		 <input type="text" id="userName" placeholder="User Name" ng-model="userName" required/>
+		 <input type="password" id="password" placeholder="Password" ng-model="password" required/>
+		 <input value="Sign In" type="submit" ng-model="loggedIn" ng-click="login()")/>
+	</form>
+</section>
+<section class="logoutSection" ng-show="loggedIn">
+	<P>Welcome {{userName}}</P>
+	<button value="Sign Out" ng-click="logout()">Sign Out</button>
+</section>

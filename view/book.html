@@ -1,0 +1,34 @@
+<div class="main" ng-controller="BookDetailController">
+	<nav class="menu" ng-init="aside = Feed">
+		<button type="button" ng-click="aside = Feed" ng-model="aside">Feed</button>
+		<br/>
+		<br/>
+		<button type="button" ng-click="aside = Profile">Profile</button>
+	</nav>
+	
+	<aside id="feed" class="feed" ng-controller="FeedController" ng-show="aside === 'Feed'">
+		<textarea rows="2" cols="100" id="postFeed" class="feedTextfield" placeholder="Text Feed to URL Feed"></textarea>
+		<button class="feedPostButton" onclick="createFeed()">Post</button>
+		<div id="feeds">
+		</div>
+	</aside>
+	
+	<aside id ="profile" class="profile" ng-controller="ProfileController" ng-show="aside === 'Feed'"">
+		<form  name="myForm" action="myBook.html" class="profileForm" onsubmit="return false;">
+			 <input type="text" id="name" class="profileForm" placeholder="Name" onchange="profileFieldChanged()"/>
+			 <div class="profileStarImage"><img src="../style/resources/star.jpg" class="profileStarImage"/></div>
+			 <input type="text" id="age" class="profileForm" placeholder="Age" onchange="profileFieldChanged()"/>
+			 <div class="profileStarImage"><img src="../style/resources/star.jpg" class="profileStarImage"/></div>
+			 <input type="text" id="phone" class="profileForm" placeholder="Phone" onchange="profileFieldChanged()"/>
+			 <div class="profileStarImage"><img src="../style/resources/star.jpg" class="profileStarImage"/></div>
+			 <input type="text" id="email" class="profileForm" placeholder="Email" onchange="profileFieldChanged()"/>
+			 <div class="profileStarImage"><img src="../style/resources/star.jpg" class="profileStarImage"/></div>				 
+			 <textarea rows="4" cols="100" id="address" class="profileForm" placeholder="Address"></textarea>
+			 <input type="file" class="profileForm" onchange="chooseImage(this)" />
+			 <input type="submit" value="Save" id="saveProfileButton" class="profileForm" onclick="saveProfile()" disabled/>
+		</form>
+		 <span>
+			 	<img class="profileImage" id="profileImage"/>
+		 </span>
+	</aside>
+<div>

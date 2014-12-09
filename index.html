@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>My Book</title>
+
+  <!--Lib scripts-->
+  <script src="./lib/angular.min.js"></script>
+  <script src="./lib/angular-route.js"></script>
+  <link rel="stylesheet" type="text/css" href="./lib/bootstrap.min.css" />
+
+  <script src="./js/app.js"></script>
+  <script src="./js/directives.js"></script>
+  <script src="./js/route.js"></script>
+  <link rel="stylesheet" type="text/css" href="./style/css/login.css" />
+  <link rel="stylesheet" type="text/css" href="./style/css/myBook.css" />
+  <link rel="stylesheet" type="text/css" href="./style/css/profile.css" />
+  <link rel="stylesheet" type="text/css" href="./style/css/feed.css" />  
+</head>
+<body ng-controller="BookController">
+
+<header>
+	<div class="headerTitle">My Book</div>
+	<section class="loginSection">
+		<form name="myForm"  ng-hide="loggedIn">
+			 <input type="text" id="userName" placeholder="User Name" ng-model="userName" required/>
+			 <input type="password" id="password" placeholder="Password" ng-model="password" required/>
+			 <input value="Sign In" type="submit" ng-model="loggedIn" ng-click="login()")/>
+		</form>
+	</section>
+	<section class="logoutSection" ng-show="loggedIn">
+		<span>Welcome {{userName}}</span>
+		<input class="logoutButton" type="submit" value="Sign Out" ng-click="logout()"></input>
+	</section>
+</header>
+
+<main ng-view></main>
+
+<footer>
+	<div>Talent Improving exercise, OFS</div>
+</footer>
+
+</body>
+</html>
