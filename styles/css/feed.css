@@ -1,7 +1,16 @@
-.feed {
+.feedPage {
     float:left;
     width :calc(100% - 100px);
     height:100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.feed {
+    width :70%;
+    height:20%;
+	margin-left : 20px;
+	margin-top : 10px;
 	background:#91AA85;
 }
 
@@ -12,12 +21,14 @@
 
 .userImage {
 	padding-top : 20px;
-	padding-left: 50px;
+	padding-bottom : 10px;
+	padding-left: 40px;
+	width:100px;
 }
 
 .feedContent {
 	padding-left : 20px;
-	width: 300px;
+	width: 250px;
 	height : 40px;
 	padding-top : 12px;
 	padding-left : 10px;
@@ -34,7 +45,7 @@
 }
 
 .feedButton {
-	background-image: url(../style/resources/closeButton.png);	
+	background-image: url(../../styles/resources/closeButton.png);	
 }
 
 .feedTextfield {

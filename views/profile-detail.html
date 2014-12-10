@@ -1,0 +1,71 @@
+<!--<form  name="myForm" action="myBook.html" class="profileForm" onsubmit="return false;">
+	 <input type="text" id="name" class="profileForm" placeholder="Name" onchange="profileFieldChanged()"/>
+	 <input type="text" id="age" class="profileForm" placeholder="Age" onchange="profileFieldChanged()"/>
+	 <input type="text" id="phone" class="profileForm" placeholder="Phone" onchange="profileFieldChanged()"/>
+	 <input type="text" id="email" class="profileForm" placeholder="Email" onchange="profileFieldChanged()"/>
+	 <textarea rows="4" cols="100" id="address" class="profileForm" placeholder="Address"></textarea>
+	 <input type="file" class="profileForm" onchange="chooseImage(this)" />
+	 <input type="submit" value="Save" id="saveProfileButton" class="profileForm" onclick="saveProfile()" disabled/>
+</form>
+ <span>
+		<img class="profileImage" id="profileImage"/>
+ </span>
+-->
+<!--
+<form>
+  <div class="form-group">
+    <input type="text" ng-model="name" placeholder="Name" />
+  </div> 
+  <div class="form-group">
+    <input type="number" ng-model="age" placeholder="Age" />
+  </div>
+  <div class="form-group">
+    <input type="number" ng-model="phone" placeholder="Phone" />
+  </div>
+  <div class="form-group">
+    <input type="text" ng-model="email" placeholder="Email" />
+  </div>
+  <div class="form-group">
+	 <textarea rows="4" cols="100" id="address" ng-model="address" placeholder="Address"></textarea>
+  </div>
+  <div class="form-group">
+	 <input type="file" class="profileForm" onchange="chooseImage(this)" />
+  </div>
+  <div class="form-group">
+	 <input type="submit" value="Save" id="saveProfileButton" class="profileForm" onclick="saveProfile()" disabled/>
+  </div>
+</form> 
+-->
+<div class="profile">
+<form class="profile" ng-submit="saveProfile()">
+	<div class="form-group">
+		<input type="text" ng-model="profile.name" placeholder="Name" required/>
+		<span class="reqfield">*</span>
+		<span>
+			<img class="profileImage" id="profileImage"/>
+		</span>
+	</div>
+	<div class="form-group">
+		<input type="number" ng-model="profile.age" placeholder="Age" required/>
+		<span class="reqfield">*</span>
+	</div>
+	<div class="form-group">
+		<input type="number" ng-model="profile.phone" placeholder="Phone" required/>
+		<span class="reqfield">*</span>
+	</div>
+	<div class="form-group">
+		<input type="email" ng-model="profile.email" placeholder="Email" required/>
+		<span class="reqfield">*</span>
+	</div>
+	<div class="form-group">
+		<textarea rows="4" cols="30" id="profile.address" ng-model="profile.address" placeholder="Address"></textarea>
+	</div>
+	<div class="form-group">
+		<input type="file" class="profileForm" ng-model="profile.photoPreview" onchange="angular.element(this).scope().addPhoto(this)"  />
+	</div>
+	</br>
+	<div class="form-group">
+		<input type="submit" value="Save" id="saveProfileButton" class="submitButton" ng-disabled="error"/>
+	</div>	
+</form> 
+<div>
