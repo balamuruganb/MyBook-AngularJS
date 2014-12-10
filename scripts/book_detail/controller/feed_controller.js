@@ -1,4 +1,4 @@
-bookDetail.controller('FeedController', function(FeedService, $scope) {
+bookDetail.controller('FeedController', function(FeedService, $scope, Feed) {
   	
 	$scope.feeds = [];
 	$scope.feedContent = "";

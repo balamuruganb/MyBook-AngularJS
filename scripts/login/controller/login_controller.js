@@ -12,6 +12,8 @@ myBook.controller('LoginController', function($scope, $location) {
 			 $location.path("/book");			
 		} else {
 	  		$scope.$parent.loggedIn = false;
+	  		alert('Invalid Username / Password');
+			$scope.user.password = "";
 		}
 	};
 	
@@ -19,7 +21,6 @@ myBook.controller('LoginController', function($scope, $location) {
 		
 		$location.path("/login");			
 		$scope.$parent.loggedIn = false;
-		$scope.user.userName = "";
 		$scope.user.password = "";
 	};
 });	  

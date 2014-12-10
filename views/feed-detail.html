@@ -2,13 +2,13 @@
 	  <div class="feedinline userImage">
 			<img src="./styles/resources/user.jpg" width="70px">
 	  </div>
-	  <div class="feedinline feedContent" ng-show="feed instanceof TextFeed">
-		<p align="justify">{{feed.text}}</p>
+	  <div class="feedinline feedContent" ng-show="feed.getType() === 'Text'">
+		<p align="justify">{{feed.getFeed()}}</p>
 	  </div>
-	  <div class="feedinline feedContent" ng-show="feed instanceof URLFeed">
-		<a href={{feed.url}} target="_blank">{{feed.url}}</a>
+	  <div class="feedinline feedContent" ng-show="feed.getType() === 'URL'">
+		<a href={{feed.getFeed()}} target="_blank">{{feed.getFeed()}}</a>
 	  </div>
-	  <div class="feedinline feedDate">{{feed.date | date:"MM/dd/yyyy 'at' h:mma"}}</div>
+	  <div class="feedinline feedDate">{{feed.getDate() | date:"MM/dd/yyyy 'at' h:mma"}}</div>
 	  <div class="feedinline feedDelete">
 		<button class="feedButton" id="feed.getId()" type="button" ng-click="removeFeed(feed.getId())">Delete</button>
 	  </div>
